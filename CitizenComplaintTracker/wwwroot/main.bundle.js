@@ -1,4 +1,4 @@
-webpackJsonp([1],{
+webpackJsonp([2],{
 
 /***/ "../../../../../src async recursive":
 /***/ (function(module, exports) {
@@ -34,7 +34,7 @@ module.exports = module.exports.toString();
 /***/ "../../../../../src/app/app.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<app-complaints></app-complaints>"
+module.exports = "<app-header></app-header>\n<app-complaints></app-complaints>"
 
 /***/ }),
 
@@ -62,7 +62,7 @@ var AppComponent = (function () {
     return AppComponent;
 }());
 AppComponent = __decorate([
-    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_5" /* Component */])({
+    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
         selector: 'app-root',
         template: __webpack_require__("../../../../../src/app/app.component.html"),
         styles: [__webpack_require__("../../../../../src/app/app.component.css")]
@@ -80,11 +80,15 @@ AppComponent = __decorate([
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_platform_browser__ = __webpack_require__("../../../platform-browser/@angular/platform-browser.es5.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_core__ = __webpack_require__("../../../core/@angular/core.es5.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__app_component__ = __webpack_require__("../../../../../src/app/app.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__angular_forms__ = __webpack_require__("../../../forms/@angular/forms.es5.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__angular_http__ = __webpack_require__("../../../http/@angular/http.es5.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__complaint_service__ = __webpack_require__("../../../../../src/app/complaint.service.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__complaints_complaints_component__ = __webpack_require__("../../../../../src/app/complaints/complaints.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_forms__ = __webpack_require__("../../../forms/@angular/forms.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__angular_http__ = __webpack_require__("../../../http/@angular/http.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__angular_platform_browser_animations__ = __webpack_require__("../../../platform-browser/@angular/platform-browser/animations.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_primeng_primeng__ = __webpack_require__("../../../../primeng/primeng.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_primeng_primeng___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_5_primeng_primeng__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__app_component__ = __webpack_require__("../../../../../src/app/app.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__complaint_service__ = __webpack_require__("../../../../../src/app/complaint.service.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__complaints_complaints_component__ = __webpack_require__("../../../../../src/app/complaints/complaints.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__header_header_component__ = __webpack_require__("../../../../../src/app/header/header.component.ts");
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return AppModule; });
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -99,24 +103,32 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 
 
 
+
+
+
+
 var AppModule = (function () {
     function AppModule() {
     }
     return AppModule;
 }());
 AppModule = __decorate([
-    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_1__angular_core__["b" /* NgModule */])({
+    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_1__angular_core__["NgModule"])({
         declarations: [
-            __WEBPACK_IMPORTED_MODULE_2__app_component__["a" /* AppComponent */],
-            __WEBPACK_IMPORTED_MODULE_6__complaints_complaints_component__["a" /* ComplaintsComponent */]
+            __WEBPACK_IMPORTED_MODULE_6__app_component__["a" /* AppComponent */],
+            __WEBPACK_IMPORTED_MODULE_9__header_header_component__["a" /* HeaderComponent */],
+            __WEBPACK_IMPORTED_MODULE_8__complaints_complaints_component__["a" /* ComplaintsComponent */]
         ],
         imports: [
-            __WEBPACK_IMPORTED_MODULE_0__angular_platform_browser__["a" /* BrowserModule */],
-            __WEBPACK_IMPORTED_MODULE_3__angular_forms__["a" /* FormsModule */],
-            __WEBPACK_IMPORTED_MODULE_4__angular_http__["a" /* HttpModule */]
+            __WEBPACK_IMPORTED_MODULE_0__angular_platform_browser__["BrowserModule"],
+            __WEBPACK_IMPORTED_MODULE_2__angular_forms__["FormsModule"],
+            __WEBPACK_IMPORTED_MODULE_3__angular_http__["a" /* HttpModule */],
+            __WEBPACK_IMPORTED_MODULE_5_primeng_primeng__["DialogModule"],
+            __WEBPACK_IMPORTED_MODULE_4__angular_platform_browser_animations__["a" /* BrowserAnimationsModule */],
+            __WEBPACK_IMPORTED_MODULE_5_primeng_primeng__["DataTableModule"]
         ],
-        providers: [__WEBPACK_IMPORTED_MODULE_5__complaint_service__["a" /* ComplaintService */]],
-        bootstrap: [__WEBPACK_IMPORTED_MODULE_2__app_component__["a" /* AppComponent */]]
+        providers: [__WEBPACK_IMPORTED_MODULE_7__complaint_service__["a" /* ComplaintService */]],
+        bootstrap: [__WEBPACK_IMPORTED_MODULE_6__app_component__["a" /* AppComponent */]]
     })
 ], AppModule);
 
@@ -130,11 +142,11 @@ AppModule = __decorate([
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return Citizen; });
 var Citizen = (function () {
-    function Citizen(firstName, lastName, email, phone) {
+    function Citizen(firstName, lastName, email, phoneNumber) {
         this.firstName = firstName;
         this.lastName = lastName;
         this.email = email;
-        this.phone = phone;
+        this.phoneNumber = phoneNumber;
     }
     return Citizen;
 }());
@@ -155,6 +167,8 @@ var Citizen = (function () {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_rxjs_add_operator_catch___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_3_rxjs_add_operator_catch__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_rxjs_add_operator_map__ = __webpack_require__("../../../../rxjs/add/operator/map.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_rxjs_add_operator_map___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_4_rxjs_add_operator_map__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_rxjs_add_observable_throw__ = __webpack_require__("../../../../rxjs/add/observable/throw.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_rxjs_add_observable_throw___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_5_rxjs_add_observable_throw__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return ComplaintService; });
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -165,6 +179,7 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
+
 
 
 
@@ -181,8 +196,8 @@ var ComplaintService = (function () {
             .catch(this.handleError);
     };
     ComplaintService.prototype.addComplaint = function (complaint) {
-        console.log('in complaint  service, post complaint');
-        console.log(complaint);
+        console.log('adding complaint');
+        console.log(complaint.citizen);
         return this.http.post(this.complaintsUrl, complaint)
             .map(this.extractData)
             .catch(this.handleError);
@@ -194,9 +209,7 @@ var ComplaintService = (function () {
     ComplaintService.prototype.handleError = function (error) {
         var errMsg;
         if (error instanceof __WEBPACK_IMPORTED_MODULE_1__angular_http__["b" /* Response */]) {
-            var body = error.json() || '';
-            var err = body.error || JSON.stringify(body);
-            errMsg = error.status + " - " + (error.statusText || '') + " " + err;
+            errMsg = error.status + " - " + (error.statusText || '');
         }
         else {
             errMsg = error.message ? error.message : error.toString();
@@ -207,7 +220,7 @@ var ComplaintService = (function () {
     return ComplaintService;
 }());
 ComplaintService = __decorate([
-    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["c" /* Injectable */])(),
+    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Injectable"])(),
     __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__angular_http__["c" /* Http */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__angular_http__["c" /* Http */]) === "function" && _a || Object])
 ], ComplaintService);
 
@@ -243,7 +256,7 @@ exports = module.exports = __webpack_require__("../../../../css-loader/lib/css-b
 
 
 // module
-exports.push([module.i, "input.ng-invalid.ng-touched {\r\n    border: 1px solid red;\r\n}\r\ntextarea.ng-invalid.ng-touched {\r\n    border: 1px solid red;\r\n}", ""]);
+exports.push([module.i, "input.ng-invalid.ng-touched {\n    border: 1px solid red;\n}\ntextarea.ng-invalid.ng-touched {\n    border: 1px solid red;\n}", ""]);
 
 // exports
 
@@ -256,7 +269,7 @@ module.exports = module.exports.toString();
 /***/ "../../../../../src/app/complaints/complaints.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"container col-md-4\">\n  <div class=\"row\">\n    <div class=\"col-xs-12 col-sm-10 col-md-6 col-sm-offset-1 col-md-offset-2\">\n      <form (ngSubmit)=\"onSubmit(f)\" #f=\"ngForm\">\n        <div id=\"user-data\">\n          <div class=\"form-group\">\n            <label for=\"firstName\">First Name</label>\n            <input type=\"text\" id=\"firstName\" class=\"form-control\" ngModel name=\"firstName\" required firstName #firstName=\"ngModel\">\n            <span class=\"help-block\" *ngIf=\"!firstName.valid && firstName.touched\">please enter a first name</span>\n            <label for=\"lastName\">Last Name</label>\n            <input type=\"text\" id=\"lastName\" class=\"form-control\" ngModel name=\"lastName\" required lastName #lastName=\"ngModel\">\n            <span class=\"help-block\" *ngIf=\"!lastName.valid && lastName.touched\">please enter a last name</span>\n            <label for=\"email\">Email</label>\n            <input type=\"text\" id=\"email\" class=\"form-control\" ngModel name=\"email\" required email #email=\"ngModel\">\n            <span class=\"help-block\" *ngIf=\"!email.valid && email.touched\">please enter a valid email</span>\n            <label for=\"phone\">Phone</label>\n            <input type=\"text\" id=\"phone\" class=\"form-control\" ngModel name=\"phone\" required phone #phone=\"ngModel\">\n            <span class=\"help-block\" *ngIf=\"!phone.valid && phone.touched\">please enter a phone number</span>\n          </div>\n          <div class=\"form-group\">\n            <label for=\"issueType\">Issue Type</label>\n            <select class=\"form-control\" [(ngModel)]=\"selectedIssue\" ngModel name=\"issueType\">\n              <option *ngFor=\"let i of issueTypes\">{{ i }}</option>\n            </select>\n            <label for=\"issueLocation\">Issue Location</label>\n            <input type=\"text\" id=\"issueLocation\" class=\"form-control\" ngModel name=\"issueLocation\" required issueLocation #issueLocation=\"ngModel\">\n            <span class=\"help-block\" *ngIf=\"!issueLocation.valid && issueLocation.touched\">please enter a valid location</span>\n            <label for=\"details\">Details</label>\n            <textarea type=\"text\" id=\"details\" class=\"form-control\" ngModel name=\"details\" required details #details=\"ngModel\">\n              </textarea>\n            <span class=\"help-block\" *ngIf=\"!details.valid && details.touched\">please enter a valid description</span>\n          </div>\n        </div>\n        <button class=\"btn btn-primary\" type=\"submit\" [disabled]=\"!f.valid\">Submit</button>\n        <h1>{{ errorMessage }}</h1>\n      </form>\n      <hr>\n    </div>\n  </div>\n</div>\n<div class=\"container col-md-8\">\n  <table class=\"table table-hover\">\n    <thead>\n      <tr>\n        <th>Issue Type</th>\n        <th>Issue Location</th>\n        <th>Reported By</th>\n        <th>Details</th>\n      </tr>\n    </thead>\n    <tbody>\n        <tr *ngFor=\"let complaint of complaints\" (click)=\"rowClick(complaint)\">\n          <td>{{ complaint.issueType }}</td>\n          <td>{{ complaint.issueLocation }}</td>\n          <td>{{ complaint.citizen.firstName }} {{ complaint.citizen.lastName }}</td>\n          <td>{{ complaint.details }}</td>\n          <tr>\n            <td> {{ complaint.details }}</td>\n          </tr>\n        </tr>\n\n      <!--<tr *ngFor=\"let complaint of complaints\" (click)=\"rowClick(complaint)\">\n        <td>{{ complaint.issueType }}</td>\n        <td>{{ complaint.issueLocation }}</td>\n        <td>{{ complaint.citizen.firstName }} {{ complaint.citizen.lastName }}</td>\n        <td>{{ complaint.details }}</td>\n      </tr>-->\n    </tbody>\n  </table>\n</div>\n\n<!--<table>\n  <tr>\n    <td>\n      <p>Name</p>\n    </td>\n    <td>\n      <p>Age</p>\n    </td>\n    <td>\n      <p>Info</p>\n    </td>\n  </tr>\n  <tr>\n    <td colspan=\"3\">\n      <p>Blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah\n        blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah.</p>\n    </td>\n  </tr>\n\n  <tr>\n    <td>\n      <p>Name</p>\n    </td>\n    <td>\n      <p>Age</p>\n    </td>\n    <td>\n      <p>Info</p>\n    </td>\n  </tr>\n  <tr>\n    <td colspan=\"3\">\n      <p>Blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah\n        blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah.</p>\n    </td>\n  </tr>\n\n  <tr>\n    <td>\n      <p>Name</p>\n    </td>\n    <td>\n      <p>Age</p>\n    </td>\n    <td>\n      <p>Info</p>\n    </td>\n  </tr>\n  <tr>\n    <td colspan=\"3\">\n      <p>Blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah\n        blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah.</p>\n    </td>\n  </tr>\n</table>-->"
+module.exports = "<div class=\"container col-md-4\">\n  <div class=\"row\">\n    <!--<div class=\"col-xs-12 col-sm-10 col-md-6 col-sm-offset-1 col-md-offset-2\">-->\n      <div class=\"col-md-8 col-md-offset-2\">\n      <form (ngSubmit)=\"onSubmit(f)\" #f=\"ngForm\">\n        <div id=\"user-data\">\n          <div class=\"form-group\">\n            <label for=\"firstName\">First Name</label>\n            <input type=\"text\" id=\"firstName\" class=\"form-control\" ngModel name=\"firstName\" required firstName #firstName=\"ngModel\">\n            <span class=\"help-block\" *ngIf=\"!firstName.valid && firstName.touched\">please enter a first name</span>\n            <label for=\"lastName\">Last Name</label>\n            <input type=\"text\" id=\"lastName\" class=\"form-control\" ngModel name=\"lastName\" required lastName #lastName=\"ngModel\">\n            <span class=\"help-block\" *ngIf=\"!lastName.valid && lastName.touched\">please enter a last name</span>\n            <label for=\"email\">Email</label>\n            <input type=\"text\" id=\"email\" class=\"form-control\" ngModel name=\"email\" required email #email=\"ngModel\">\n            <span class=\"help-block\" *ngIf=\"!email.valid && email.touched\">please enter a valid email</span>\n            <label for=\"phoneNumber\">Phone</label>\n            <input type=\"text\" id=\"phoneNumber\" class=\"form-control\" ngModel name=\"phoneNumber\" required phone #phoneNumber=\"ngModel\">\n            <span class=\"help-block\" *ngIf=\"!phoneNumber.valid && phoneNumber.touched\">please enter a phoneNumber number</span>\n          </div>\n          <div class=\"form-group\">\n            <label for=\"issueType\">Issue Type</label>\n            <select class=\"form-control\" [(ngModel)]=\"selectedIssue\" ngModel name=\"issueType\">\n              <option *ngFor=\"let i of issueTypes\">{{ i }}</option>\n            </select>\n            <label for=\"issueLocation\">Issue Location</label>\n            <input type=\"text\" id=\"issueLocation\" class=\"form-control\" ngModel name=\"issueLocation\" required issueLocation #issueLocation=\"ngModel\">\n            <span class=\"help-block\" *ngIf=\"!issueLocation.valid && issueLocation.touched\">please enter a valid location</span>\n            <label for=\"details\">Details</label>\n            <textarea type=\"text\" id=\"details\" class=\"form-control\" ngModel name=\"details\" required details #details=\"ngModel\">\n              </textarea>\n            <span class=\"help-block\" *ngIf=\"!details.valid && details.touched\">please enter a valid description</span>\n          </div>\n        </div>\n        <button class=\"btn btn-success\" type=\"submit\" [disabled]=\"!f.valid\">Add New Complaint</button>\n        <h1>{{ errorMessage }}</h1>\n      </form>\n      <hr>\n    </div>\n  </div>\n</div>\n<div class=\"container col-md-8\">\n  <table class=\"table table-responsive table-bordered table-striped\">\n    <thead>\n      <th>Issue Type</th>\n      <th>Issue Location</th>\n      <th>Reported By</th>\n      <th></th>\n    </thead>\n    <tbody>\n      <tr *ngFor=\"let complaint of complaints\">\n        <td>{{ complaint.issueType }}</td>\n        <td>{{ complaint.issueLocation }}</td>\n        <td>{{ complaint.citizen.firstName }} {{ complaint.citizen.lastName }}</td>\n        <td>\n          <button class=\"btn btn-primary\" (click)=\"showDetails(complaint)\">Details</button>\n        </td>\n      </tr>\n    </tbody>\n  </table>\n\n  <p-dialog header=\"Details\" [(visible)]=\"displayDialog\" modal='true' [width]=\"500\">\n    <div *ngIf=\"selectedComplaint\">\n      <div class=\"panel panel-default\">\n        <div class=\"panel-heading\">\n          Citizen Contact Information\n        </div>\n        <div class=\"panel-body\">\n          <div class=\"form-horizontal col-md-12\">\n            <label class=\"control-label\"><p class=\"text-info\">Name: {{ selectedComplaint.citizen.firstName }} {{ selectedComplaint.citizen.lastName }}</p></label>\n          </div>\n          <div class=\"form-horizontal col-md-12\">\n            <label class=\"control-label\"><p class=\"text-info\">Email: {{ selectedComplaint.citizen.email }}</p></label>\n          </div>\n          <div class=\"form-horizontal col-md-12\">\n            <label class=\"control-label\"><p class=\"text-info\">Phone: {{ selectedComplaint.citizen.phone }}</p></label>\n          </div>\n        </div>\n      </div>\n      <div class=\"panel panel-default\">\n        <div class=\"panel-heading\">\n          Complaint Details\n        </div>\n        <div class=\"panel-body\">\n          <div class=\"form-horizontal col-md-12\">\n            <p class=\"text-info\">{{ selectedComplaint.details }}</p>\n          </div>\n        </div>\n      </div>\n    </div>\n  </p-dialog>\n</div>"
 
 /***/ }),
 
@@ -287,8 +300,9 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 var ComplaintsComponent = (function () {
     function ComplaintsComponent(complaintService) {
         this.complaintService = complaintService;
-        this.issueTypes = ['Graffiti', 'Traffic', 'Parks & Rec'];
+        this.issueTypes = ['Graffiti', 'Traffic', 'Parks & Rec', 'Grass/Weeds', 'Roads', 'Signs'];
         this.selectedIssue = '';
+        this.displayDialog = false;
     }
     ComplaintsComponent.prototype.ngOnInit = function () {
         this.getComplaints();
@@ -298,36 +312,95 @@ var ComplaintsComponent = (function () {
         this.complaintService.getComplaints()
             .subscribe(function (complaints) { return _this.complaints = complaints; }, function (error) { return _this.errorMessage = error; });
     };
-    ComplaintsComponent.prototype.addComplaint = function () {
+    ComplaintsComponent.prototype.addComplaint = function (newComplaint) {
         var _this = this;
-        this.complaintService.addComplaint(this.complaint).subscribe(function (complaint) {
-            _this.complaints.push(_this.complaint);
+        this.complaintService.addComplaint(newComplaint).subscribe(function (complaint) {
+            _this.complaints.push(complaint);
             _this.complaintForm.resetForm();
             _this.errorMessage = '';
         }, function (error) { return _this.errorMessage = error; });
     };
+    ComplaintsComponent.prototype.showDetails = function (complaint) {
+        this.selectedComplaint = complaint;
+        this.displayDialog = true;
+    };
     ComplaintsComponent.prototype.onSubmit = function () {
-        this.citizen = new __WEBPACK_IMPORTED_MODULE_4__citizen__["a" /* Citizen */](this.complaintForm.value.firstName, this.complaintForm.value.lastName, this.complaintForm.value.email, this.complaintForm.value.phone);
+        this.citizen = new __WEBPACK_IMPORTED_MODULE_4__citizen__["a" /* Citizen */](this.complaintForm.value.firstName, this.complaintForm.value.lastName, this.complaintForm.value.email, this.complaintForm.value.phoneNumber);
         this.complaint = new __WEBPACK_IMPORTED_MODULE_3__complaint__["a" /* Complaint */](this.selectedIssue, this.complaintForm.value.issueLocation, this.complaintForm.value.details, this.citizen);
-        this.addComplaint();
+        this.addComplaint(this.complaint);
     };
     return ComplaintsComponent;
 }());
 __decorate([
-    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_4" /* ViewChild */])('f'),
-    __metadata("design:type", typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__angular_forms__["b" /* NgForm */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__angular_forms__["b" /* NgForm */]) === "function" && _a || Object)
+    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["ViewChild"])('f'),
+    __metadata("design:type", typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__angular_forms__["NgForm"] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__angular_forms__["NgForm"]) === "function" && _a || Object)
 ], ComplaintsComponent.prototype, "complaintForm", void 0);
 ComplaintsComponent = __decorate([
-    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_5" /* Component */])({
+    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
         selector: 'app-complaints',
         template: __webpack_require__("../../../../../src/app/complaints/complaints.component.html"),
-        styles: [__webpack_require__("../../../../../src/app/complaints/complaints.component.css")]
+        styles: [__webpack_require__("../../../../../src/app/complaints/complaints.component.css")],
     }),
     __metadata("design:paramtypes", [typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_2__complaint_service__["a" /* ComplaintService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__complaint_service__["a" /* ComplaintService */]) === "function" && _b || Object])
 ], ComplaintsComponent);
 
 var _a, _b;
 //# sourceMappingURL=complaints.component.js.map
+
+/***/ }),
+
+/***/ "../../../../../src/app/header/header.component.css":
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__("../../../../css-loader/lib/css-base.js")(false);
+// imports
+
+
+// module
+exports.push([module.i, ".navbar {\n    color: #FFFFFF;\n    background-color: #f9c362;\n}", ""]);
+
+// exports
+
+
+/*** EXPORTS FROM exports-loader ***/
+module.exports = module.exports.toString();
+
+/***/ }),
+
+/***/ "../../../../../src/app/header/header.component.html":
+/***/ (function(module, exports) {
+
+module.exports = "<nav class=\"navbar navbar-default\">\n    <div class=\"container-fluid\">\n        <div class=\"navbar-header navbar-custom\">\n            <div class=\"navbar-brand\">Citizen Complaint Tracker</div>\n        </div>\n    </div>\n</nav>"
+
+/***/ }),
+
+/***/ "../../../../../src/app/header/header.component.ts":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/@angular/core.es5.js");
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return HeaderComponent; });
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+
+var HeaderComponent = (function () {
+    function HeaderComponent() {
+    }
+    return HeaderComponent;
+}());
+HeaderComponent = __decorate([
+    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
+        selector: 'app-header',
+        template: __webpack_require__("../../../../../src/app/header/header.component.html"),
+        styles: [__webpack_require__("../../../../../src/app/header/header.component.css")]
+    })
+], HeaderComponent);
+
+//# sourceMappingURL=header.component.js.map
 
 /***/ }),
 
@@ -362,7 +435,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 
 
 if (__WEBPACK_IMPORTED_MODULE_3__environments_environment__["a" /* environment */].production) {
-    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["a" /* enableProdMode */])();
+    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["enableProdMode"])();
 }
 __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_1__angular_platform_browser_dynamic__["a" /* platformBrowserDynamic */])().bootstrapModule(__WEBPACK_IMPORTED_MODULE_2__app_app_module__["a" /* AppModule */]);
 //# sourceMappingURL=main.js.map

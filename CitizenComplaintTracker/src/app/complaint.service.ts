@@ -3,6 +3,8 @@ import { Http, Response } from '@angular/http';
 import { Observable } from 'rxjs/Observable';
 import 'rxjs/add/operator/catch';
 import 'rxjs/add/operator/map';
+import 'rxjs/add/observable/throw';
+
 import { Complaint } from './complaint';
 
 @Injectable()
@@ -18,8 +20,6 @@ export class ComplaintService {
     }
 
     addComplaint(complaint: Complaint): Observable<Complaint> {
-        console.log('in complaint  service, post complaint');
-        console.log(complaint);
         return this.http.post(this.complaintsUrl, complaint)
             .map(this.extractData)
             .catch(this.handleError);
@@ -33,9 +33,7 @@ export class ComplaintService {
     private handleError(error: Response | any) {
         let errMsg: string;
         if (error instanceof Response) {
-            const body = error.json() || '';
-            const err = body.error || JSON.stringify(body);
-            errMsg = `${error.status} - ${error.statusText || ''} ${err}`;
+            errMsg = `${error.status} - ${error.statusText || ''}`;
         } else {
             errMsg = error.message ? error.message : error.toString();
         }
