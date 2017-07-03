@@ -6,11 +6,11 @@ using System.Threading.Tasks;
 
 namespace CitizenComplaintTracker.View_Models
 {
-  public class ComplaintViewModel
-  {
-    public string IssueType { get; set; }
-    public string IssueLocation { get; set; }
-    public string Details { get; set; }
-    public CitizenViewModel Citizen { get; set; }
-  }
+    public class ComplaintViewModel
+    {
+        public string IssueType { get; set; }
+        public string IssueLocation { get; set; }
+        public string Details { get; set; }
+        public CitizenViewModel Citizen { get; set; }
+    }
 }

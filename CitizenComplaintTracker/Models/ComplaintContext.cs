@@ -6,13 +6,13 @@ using System.Threading.Tasks;
 
 namespace CitizenComplaintTracker.Models
 {
-  public class ComplaintContext : DbContext
-  {
-    public ComplaintContext(DbContextOptions options) : base(options)
+    public class ComplaintContext : DbContext
     {
-    }
+        public ComplaintContext(DbContextOptions options) : base(options)
+        {
+        }
 
-    public DbSet<Complaint> Complaints { get; set; }
-    public DbSet<Citizen> Citizens { get; set; }
-  }
+        public DbSet<Complaint> Complaints { get; set; }
+        public DbSet<Citizen> Citizens { get; set; }
+    }
 }

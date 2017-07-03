@@ -7,38 +7,38 @@ using Microsoft.EntityFrameworkCore;
 
 namespace CitizenComplaintTracker.Repository
 {
-  public class ComplaintRepository : IComplaintRepository
-  {
-    private ComplaintContext _context;
-
-    public ComplaintRepository(ComplaintContext context)
+    public class ComplaintRepository : IComplaintRepository
     {
-      _context = context;
-    }
+        private ComplaintContext _context;
 
-    public void AddCitizen(Citizen citizen)
-    {
-      _context.Citizens.Add(citizen);
-    }
+        public ComplaintRepository(ComplaintContext context)
+        {
+            _context = context;
+        }
 
-    public void AddComplaint(Complaint complaint)
-    {
-      _context.Complaints.Add(complaint);
-    }
+        public void AddCitizen(Citizen citizen)
+        {
+            _context.Citizens.Add(citizen);
+        }
 
-    public Citizen GetCitizen(string emailAddress)
-    {
-      return _context.Citizens.Where(c => c.Email == emailAddress).FirstOrDefault();
-    }
+        public void AddComplaint(Complaint complaint)
+        {
+            _context.Complaints.Add(complaint);
+        }
 
-    public IEnumerable<Complaint> GetComplaints()
-    {
-      return _context.Complaints.Include(c => c.Citizen).ToList();
-    }
+        public Citizen GetCitizen(string emailAddress)
+        {
+            return _context.Citizens.Where(c => c.Email == emailAddress).FirstOrDefault();
+        }
 
-    public async Task<bool> SaveChangesAsync()
-    {
-      return (await _context.SaveChangesAsync()) > 0;
+        public IEnumerable<Complaint> GetComplaints()
+        {
+            return _context.Complaints.Include(c => c.Citizen).ToList();
+        }
+
+        public async Task<bool> SaveChangesAsync()
+        {
+            return (await _context.SaveChangesAsync()) > 0;
+        }
     }
-  }
 }

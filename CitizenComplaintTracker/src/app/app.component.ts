@@ -8,7 +8,7 @@ import { Http } from '@angular/http'
 })
 export class AppComponent implements OnInit {
 
-    constructor(){}
+    constructor() { }
 
     ngOnInit() {
     }

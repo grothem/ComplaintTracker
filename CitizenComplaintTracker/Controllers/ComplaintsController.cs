@@ -33,27 +33,19 @@ namespace CitizenComplaintTracker.Controllers
                 try
                 {
                     var complaint = AutoMapper.Mapper.Map<Complaint>(vm);
-                    var citizen = _repository.GetCitizen(complaint.Citizen.Email);
-                    if (citizen == null){
-                        _repository.AddCitizen(citizen);
-                    }
-                    else{
-                        //citizen already exists, so just use the existing entity instead of
-                        //the one from the view model
-						complaint.Citizen = citizen; 
-					}
 
+                    _repository.AddCitizen(complaint.Citizen);
                     _repository.AddComplaint(complaint);
 
                     if (await _repository.SaveChangesAsync())
                     {
-                        return Created($"/api/complaints", AutoMapper.Mapper.Map<ComplaintViewModel>(complaint));
+                        return Created("/api/complaints", AutoMapper.Mapper.Map<ComplaintViewModel>(complaint));
                     }
                 }
                 catch (Exception ex)
                 {
-                    //FUTURE: add logging
-                    return BadRequest("Failed to save the complaint");
+                    return BadRequest(string.Format("An exception was caught attempting " +
+                                                    "to add new complaint. {0}", ex.ToString()));
                 }
             }
 

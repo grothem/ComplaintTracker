@@ -10,7 +10,7 @@ import { DataTableModule } from 'primeng/primeng';
 import { AppComponent } from './app.component';
 import { ComplaintService } from './complaint.service';
 import { ComplaintsComponent } from './complaints/complaints.component';
-import { HeaderComponent } from'./header/header.component';
+import { HeaderComponent } from './header/header.component';
 
 
 @NgModule({

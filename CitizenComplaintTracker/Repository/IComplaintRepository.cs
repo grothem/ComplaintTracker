@@ -6,14 +6,14 @@ using System.Threading.Tasks;
 
 namespace CitizenComplaintTracker.Repository
 {
-  public interface IComplaintRepository
-  {
-    IEnumerable<Complaint> GetComplaints();
-    Citizen GetCitizen(string emailAddress);
+    public interface IComplaintRepository
+    {
+        IEnumerable<Complaint> GetComplaints();
+        Citizen GetCitizen(string emailAddress);
 
-    void AddComplaint(Complaint complaint);
-    void AddCitizen(Citizen citizen);
+        void AddComplaint(Complaint complaint);
+        void AddCitizen(Citizen citizen);
 
-    Task<bool> SaveChangesAsync();
-  }
+        Task<bool> SaveChangesAsync();
+    }
 }
